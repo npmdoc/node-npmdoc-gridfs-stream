@@ -1,0 +1,1293 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/aheckmann/gridfs-stream"
+
+    >gridfs-stream (v1.1.1)</a>
+</h1>
+<h4>Writable/Readable Nodejs compatible GridFS streams</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gridfs-stream">module gridfs-stream</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gridfs-stream.gridfs-stream">
+            function <span class="apidocSignatureSpan"></span>gridfs-stream
+            <span class="apidocSignatureSpan">(db, mongo)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gridfs-stream.readstream">
+            function <span class="apidocSignatureSpan">gridfs-stream.</span>readstream
+            <span class="apidocSignatureSpan">(grid, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gridfs-stream.writestream">
+            function <span class="apidocSignatureSpan">gridfs-stream.</span>writestream
+            <span class="apidocSignatureSpan">(grid, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gridfs-stream.</span>readstream.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gridfs-stream.</span>writestream.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gridfs-stream.readstream">module gridfs-stream.readstream</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gridfs-stream.readstream.readstream">
+            function <span class="apidocSignatureSpan">gridfs-stream.</span>readstream
+            <span class="apidocSignatureSpan">(grid, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gridfs-stream.readstream.super_">
+            function <span class="apidocSignatureSpan">gridfs-stream.readstream.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gridfs-stream.readstream.prototype">module gridfs-stream.readstream.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gridfs-stream.readstream.prototype._close">
+            function <span class="apidocSignatureSpan">gridfs-stream.readstream.prototype.</span>_close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gridfs-stream.readstream.prototype._error">
+            function <span class="apidocSignatureSpan">gridfs-stream.readstream.prototype.</span>_error
+            <span class="apidocSignatureSpan">(err)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gridfs-stream.readstream.prototype._open">
+            function <span class="apidocSignatureSpan">gridfs-stream.readstream.prototype.</span>_open
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gridfs-stream.readstream.prototype._push">
+            function <span class="apidocSignatureSpan">gridfs-stream.readstream.prototype.</span>_push
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gridfs-stream.readstream.prototype._read">
+            function <span class="apidocSignatureSpan">gridfs-stream.readstream.prototype.</span>_read
+            <span class="apidocSignatureSpan">(size)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gridfs-stream.readstream.prototype.destroy">
+            function <span class="apidocSignatureSpan">gridfs-stream.readstream.prototype.</span>destroy
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gridfs-stream.writestream">module gridfs-stream.writestream</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gridfs-stream.writestream.writestream">
+            function <span class="apidocSignatureSpan">gridfs-stream.</span>writestream
+            <span class="apidocSignatureSpan">(grid, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gridfs-stream.writestream.super_">
+            function <span class="apidocSignatureSpan">gridfs-stream.writestream.</span>super_
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gridfs-stream.writestream.prototype">module gridfs-stream.writestream.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gridfs-stream.writestream.prototype._close">
+            function <span class="apidocSignatureSpan">gridfs-stream.writestream.prototype.</span>_close
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gridfs-stream.writestream.prototype._closeInternal">
+            function <span class="apidocSignatureSpan">gridfs-stream.writestream.prototype.</span>_closeInternal
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gridfs-stream.writestream.prototype._error">
+            function <span class="apidocSignatureSpan">gridfs-stream.writestream.prototype.</span>_error
+            <span class="apidocSignatureSpan">(err)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gridfs-stream.writestream.prototype._flush">
+            function <span class="apidocSignatureSpan">gridfs-stream.writestream.prototype.</span>_flush
+            <span class="apidocSignatureSpan">(flushed)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gridfs-stream.writestream.prototype._flushInternal">
+            function <span class="apidocSignatureSpan">gridfs-stream.writestream.prototype.</span>_flushInternal
+            <span class="apidocSignatureSpan">(flushed)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gridfs-stream.writestream.prototype._open">
+            function <span class="apidocSignatureSpan">gridfs-stream.writestream.prototype.</span>_open
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gridfs-stream.writestream.prototype._write">
+            function <span class="apidocSignatureSpan">gridfs-stream.writestream.prototype.</span>_write
+            <span class="apidocSignatureSpan">(chunk, encoding, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gridfs-stream.writestream.prototype._writeInternal">
+            function <span class="apidocSignatureSpan">gridfs-stream.writestream.prototype.</span>_writeInternal
+            <span class="apidocSignatureSpan">(chunk, encoding, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gridfs-stream.writestream.prototype.destroy">
+            function <span class="apidocSignatureSpan">gridfs-stream.writestream.prototype.</span>destroy
+            <span class="apidocSignatureSpan">(err)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gridfs-stream.writestream.prototype.destroySoon">
+            function <span class="apidocSignatureSpan">gridfs-stream.writestream.prototype.</span>destroySoon
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gridfs-stream" id="apidoc.module.gridfs-stream">module gridfs-stream</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gridfs-stream.gridfs-stream" id="apidoc.element.gridfs-stream.gridfs-stream">
+        function <span class="apidocSignatureSpan"></span>gridfs-stream
+        <span class="apidocSignatureSpan">(db, mongo)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Grid(db, mongo) {
+  if (!(this instanceof Grid)) {
+    return new Grid(db, mongo);
+  }
+
+  mongo || (mongo = Grid.mongo ? Grid.mongo : undefined);
+
+  if (!mongo) throw new Error(&#x27;missing mongo argument\nnew Grid(db, mongo)&#x27;);
+  if (!db) throw new Error(&#x27;missing db argument\nnew Grid(db, mongo)&#x27;);
+
+  // the db must already be open b/c there is no `open` event emitted
+  // in old versions of the driver
+  this.db = db;
+  this.mongo = mongo;
+  this.curCol = this.mongo.GridStore ? this.mongo.GridStore.DEFAULT_ROOT_COLLECTION : &#x27;fs&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gridfs-stream.readstream" id="apidoc.element.gridfs-stream.readstream">
+        function <span class="apidocSignatureSpan">gridfs-stream.</span>readstream
+        <span class="apidocSignatureSpan">(grid, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function GridReadStream(grid, options) {
+  if (!(this instanceof GridReadStream))
+    return new GridReadStream(grid, options);
+
+  Readable.call(this);
+  this._opened = false;
+  this._opening = false;
+  this._closing = false;
+  this._end = false;
+  this._needToPush = false;
+
+  this._grid = grid;
+
+  // a bit backwards compatible
+  if (typeof options === &#x27;string&#x27;) {
+    options = { filename: options };
+  }
+
+  this.options = options || {};
+
+  if(options._id) {
+    this.id = grid.tryParseObjectId(options._id);
+
+    if(!this.id) {
+      this.id = options._id;
+    }
+  }
+
+  this.name = this.options.filename || &#x27;&#x27;;
+  this.mode = &#x27;r&#x27;;
+
+  // If chunk size specified use it for read chunk size otherwise default to 255k (GridStore default). chunkSize and chunk_size
+in mongodb api so check both.
+  this._chunkSize = this.options.chunkSize || this.options.chunk_size || 1024 * 255;
+
+  this.range = this.options.range || { startPos: 0, endPos: undefined };
+  if (typeof(this.range.startPos) === &#x27;undefined&#x27;) {
+    this.range.startPos = 0;
+  }
+
+  this._currentPos = this.range.startPos;
+
+  var options = {};
+  for (var i in this.options) { options[i] = this.options[i]; }
+  options.root || (options.root = this._grid.curCol);
+
+  this._store = new grid.mongo.GridStore(grid.db, this.id || new grid.mongo.ObjectID(), this.name, this.mode, options);
+  // Workaround for Gridstore issue https://github.com/mongodb/node-mongodb-native/pull/930
+  if (!this.id) {
+    // var REFERENCE_BY_FILENAME = 0,
+    this._store.referenceBy = 0;
+  }
+
+  var self = this;
+
+  //Close the store once `end` received
+  this.on(&#x27;end&#x27;, function() {
+    self._end = true;
+    self._close()
+  });
+
+  process.nextTick(function() {
+    self._open();
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gridfs-stream.writestream" id="apidoc.element.gridfs-stream.writestream">
+        function <span class="apidocSignatureSpan">gridfs-stream.</span>writestream
+        <span class="apidocSignatureSpan">(grid, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function GridWriteStream(grid, options) {
+	if (!(this instanceof GridWriteStream))
+		return new GridWriteStream(grid, options);
+
+	FlushWritable.call(this);
+	this._opened = false;
+	this._opening = false;
+	this._writable = true;
+	this._closing = false;
+	this._destroyed = false;
+	this._errorEmitted = false;
+	this._grid = grid;
+
+	// a bit backwards compatible
+	if (typeof options === &#x27;string&#x27;) {
+		options = { filename: options };
+	}
+	this.options = options || {};
+	if(this.options._id) {
+		this.id = grid.tryParseObjectId(this.options._id);
+
+		if(!this.id) {
+			this.id = this.options._id;
+		}
+	}
+
+	this.name = this.options.filename;  // This may be undefined, that&#x27;s okay
+
+	if (!this.id) {
+		//_id not passed or unparsable? This is a new file!
+		this.id = new grid.mongo.ObjectID();
+		this.name = this.name || &#x27;&#x27;;  // A new file needs a name
+	}
+
+	this.mode = &#x27;w&#x27;; //Mongodb v2 driver have disabled w+ because of possible data corruption. So only allow `w` for now.
+
+	// The value of this.name may be undefined. GridStore treats that as a missing param
+	// in the call signature, which is what we want.
+	this._store = new grid.mongo.GridStore(grid.db, this.id, this.name, this.mode, this.options);
+
+	this._delayedWrite = null;
+	this._delayedFlush = null;
+	this._delayedClose = null;
+
+	var self = this;
+
+	self._open();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gridfs-stream.readstream" id="apidoc.module.gridfs-stream.readstream">module gridfs-stream.readstream</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gridfs-stream.readstream.readstream" id="apidoc.element.gridfs-stream.readstream.readstream">
+        function <span class="apidocSignatureSpan">gridfs-stream.</span>readstream
+        <span class="apidocSignatureSpan">(grid, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function GridReadStream(grid, options) {
+  if (!(this instanceof GridReadStream))
+    return new GridReadStream(grid, options);
+
+  Readable.call(this);
+  this._opened = false;
+  this._opening = false;
+  this._closing = false;
+  this._end = false;
+  this._needToPush = false;
+
+  this._grid = grid;
+
+  // a bit backwards compatible
+  if (typeof options === &#x27;string&#x27;) {
+    options = { filename: options };
+  }
+
+  this.options = options || {};
+
+  if(options._id) {
+    this.id = grid.tryParseObjectId(options._id);
+
+    if(!this.id) {
+      this.id = options._id;
+    }
+  }
+
+  this.name = this.options.filename || &#x27;&#x27;;
+  this.mode = &#x27;r&#x27;;
+
+  // If chunk size specified use it for read chunk size otherwise default to 255k (GridStore default). chunkSize and chunk_size
+in mongodb api so check both.
+  this._chunkSize = this.options.chunkSize || this.options.chunk_size || 1024 * 255;
+
+  this.range = this.options.range || { startPos: 0, endPos: undefined };
+  if (typeof(this.range.startPos) === &#x27;undefined&#x27;) {
+    this.range.startPos = 0;
+  }
+
+  this._currentPos = this.range.startPos;
+
+  var options = {};
+  for (var i in this.options) { options[i] = this.options[i]; }
+  options.root || (options.root = this._grid.curCol);
+
+  this._store = new grid.mongo.GridStore(grid.db, this.id || new grid.mongo.ObjectID(), this.name, this.mode, options);
+  // Workaround for Gridstore issue https://github.com/mongodb/node-mongodb-native/pull/930
+  if (!this.id) {
+    // var REFERENCE_BY_FILENAME = 0,
+    this._store.referenceBy = 0;
+  }
+
+  var self = this;
+
+  //Close the store once `end` received
+  this.on(&#x27;end&#x27;, function() {
+    self._end = true;
+    self._close()
+  });
+
+  process.nextTick(function() {
+    self._open();
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gridfs-stream.readstream.super_" id="apidoc.element.gridfs-stream.readstream.super_">
+        function <span class="apidocSignatureSpan">gridfs-stream.readstream.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Readable(options) {
+  if (!(this instanceof Readable))
+    return new Readable(options);
+
+  this._readableState = new ReadableState(options, this);
+
+  // legacy
+  this.readable = true;
+
+  if (options &#x26;&#x26; typeof options.read === &#x27;function&#x27;)
+    this._read = options.read;
+
+  Stream.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gridfs-stream.readstream.prototype" id="apidoc.module.gridfs-stream.readstream.prototype">module gridfs-stream.readstream.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gridfs-stream.readstream.prototype._close" id="apidoc.element.gridfs-stream.readstream.prototype._close">
+        function <span class="apidocSignatureSpan">gridfs-stream.readstream.prototype.</span>_close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _close() {
+  var self = this;
+  if (!self._opened) return;
+  if (self._closing) return;
+  this._closing = true;
+
+  // Close the store and emit `close` event
+  self._store.close(function (err) {
+    if (err) return self._error(err);
+    self.emit(&#x27;close&#x27;);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+
+  var self = this;
+
+  //Close the store once `end` received
+  this.on(&#x27;end&#x27;, function() {
+    self._end = true;
+    self.<span class="apidocCodeKeywordSpan">_close</span>()
+  });
+
+  process.nextTick(function() {
+    self._open();
+  });
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gridfs-stream.readstream.prototype._error" id="apidoc.element.gridfs-stream.readstream.prototype._error">
+        function <span class="apidocSignatureSpan">gridfs-stream.readstream.prototype.</span>_error
+        <span class="apidocSignatureSpan">(err)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _error(err) {
+  // Set end true so that no further reads from GridSotre are possible and close the store
+  this._end = true;
+
+  // Emit the error event
+  this.emit(&#x27;error&#x27;, err);
+
+  // Close the gridsore if an error is received.
+  this._close()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (this._opening) return;
+  this._opening = true;
+
+  var self = this;
+
+  // Open the sore
+  this._store.open(function (err, gs) {
+    if (err) return self.<span class="apidocCodeKeywordSpan">_error</span>(err);
+
+    // Find the length of the file by setting the head to the end of the file and requesting the position
+    self._store.seek(0, self._grid.mongo.GridStore.IO_SEEK_END, function(err) {
+if (err) return self._error(err);
+
+// Request the position of the end of the file
+self._store.tell(function(err, position) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gridfs-stream.readstream.prototype._open" id="apidoc.element.gridfs-stream.readstream.prototype._open">
+        function <span class="apidocSignatureSpan">gridfs-stream.readstream.prototype.</span>_open
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _open() {
+  if (this._opening) return;
+  this._opening = true;
+
+  var self = this;
+
+  // Open the sore
+  this._store.open(function (err, gs) {
+    if (err) return self._error(err);
+
+    // Find the length of the file by setting the head to the end of the file and requesting the position
+    self._store.seek(0, self._grid.mongo.GridStore.IO_SEEK_END, function(err) {
+        if (err) return self._error(err);
+
+        // Request the position of the end of the file
+        self._store.tell(function(err, position) {
+        if (err) return self._error(err);
+
+            // Calculate the correct end position either from EOF or end of range. Also handle incorrect range request.
+            if (!self.range.endPos || self.range.endPos &#x3e; position-1) {self.range.endPos = position - 1};
+
+            // Set the read head to the beginning of the file or start position if specified
+            self._store.seek(self.range.startPos, self._grid.mongo.GridStore.IO_SEEK_SET, function(err) {
+              if (err) return self._error(err);
+
+              // The store is now open
+              self.emit(&#x27;open&#x27;);
+              self._opened = true;
+
+              // If `_read()` was already called then we need to start pushing data to the stream. Otherwise `_read()` will handle
+ this once called from stream.
+              if (self._needToPush) self._push();
+            });
+        });
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ //Close the store once `end` received
+ this.on(&#x27;end&#x27;, function() {
+   self._end = true;
+   self._close()
+ });
+
+ process.nextTick(function() {
+   self.<span class="apidocCodeKeywordSpan">_open</span>();
+ });
+}
+
+/**
+* Inherit from stream.Readable
+* @ignore
+*/
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gridfs-stream.readstream.prototype._push" id="apidoc.element.gridfs-stream.readstream.prototype._push">
+        function <span class="apidocSignatureSpan">gridfs-stream.readstream.prototype.</span>_push
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _push() {
+  var self = this;
+
+  // Do not continue if the store is closed
+  if (!this._opened) return self._error(&#x27;Unable to push data. Expected gridstore to be open&#x27;);
+
+  // Check if EOF, if the full requested range has been pushed or if the stream must be destroyed. If so than push EOF-signalling
+ `null` chunk
+  if ( !this._store.eof() &#x26;&#x26; (self._currentPos &#x3c;= self.range.endPos) &#x26;&#x26; !this._end) {
+
+    // Determine the chunk size for the read from GridStore
+    // Use default chunk size or user specified
+    var readChunkSize = self._chunkSize
+    // Override the chunk size if the chunk size is more than the size that is left until EOF/range
+    if (self.range.endPos-self._currentPos &#x3c; self._chunkSize) {readChunkSize = self.range.endPos - self._currentPos + 1};
+
+    // Read the chunk from GridSore. Head moves automatically after each read.
+    self._store.read(readChunkSize,function(err, data) {
+
+      // If error stop and close the store
+      if (err) return self._error(err);
+
+      // Advance the current position of the read head
+      self._currentPos += data.length;
+
+      // Push data
+      if (!self._end) self.push(data)
+    })
+
+
+  } else {
+    // Push EOF-signalling `null` chunk
+    this._end = true;
+    self.push(null);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+              if (err) return self._error(err);
+
+              // The store is now open
+              self.emit(&#x27;open&#x27;);
+              self._opened = true;
+
+              // If `_read()` was already called then we need to start pushing data to the stream. Otherwise `_read()` will handle
+ this once called from stream.
+              if (self._needToPush) self.<span class="apidocCodeKeywordSpan">_push</span>();
+            });
+        });
+    });
+  });
+}
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gridfs-stream.readstream.prototype._read" id="apidoc.element.gridfs-stream.readstream.prototype._read">
+        function <span class="apidocSignatureSpan">gridfs-stream.readstream.prototype.</span>_read
+        <span class="apidocSignatureSpan">(size)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _read(size) {
+  var self = this;
+
+  // Set `_needToPush` to true because the store may still be closed if data is immediately piped. Once the store is open `_needToPush
+` is checked and _push() called if necessary.
+  self._needToPush = true;
+
+  // The store must be open
+  if (!this._opened) return;
+
+  // Read data from GridStore and push to stream
+  self._push();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gridfs-stream.readstream.prototype.destroy" id="apidoc.element.gridfs-stream.readstream.prototype.destroy">
+        function <span class="apidocSignatureSpan">gridfs-stream.readstream.prototype.</span>destroy
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function destroy() {
+  // Set end true so that no further reads from GridSotre are possible and close the store
+  this._end = true;
+  this._close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * destroySoon
+ *
+ * @api public
+ * @deprecated just use destroy()
+ */
+
+GridWriteStream.prototype.destroySoon = function destroySoon () {
+	return this.<span class="apidocCodeKeywordSpan">destroy</span>();
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gridfs-stream.writestream" id="apidoc.module.gridfs-stream.writestream">module gridfs-stream.writestream</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gridfs-stream.writestream.writestream" id="apidoc.element.gridfs-stream.writestream.writestream">
+        function <span class="apidocSignatureSpan">gridfs-stream.</span>writestream
+        <span class="apidocSignatureSpan">(grid, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function GridWriteStream(grid, options) {
+	if (!(this instanceof GridWriteStream))
+		return new GridWriteStream(grid, options);
+
+	FlushWritable.call(this);
+	this._opened = false;
+	this._opening = false;
+	this._writable = true;
+	this._closing = false;
+	this._destroyed = false;
+	this._errorEmitted = false;
+	this._grid = grid;
+
+	// a bit backwards compatible
+	if (typeof options === &#x27;string&#x27;) {
+		options = { filename: options };
+	}
+	this.options = options || {};
+	if(this.options._id) {
+		this.id = grid.tryParseObjectId(this.options._id);
+
+		if(!this.id) {
+			this.id = this.options._id;
+		}
+	}
+
+	this.name = this.options.filename;  // This may be undefined, that&#x27;s okay
+
+	if (!this.id) {
+		//_id not passed or unparsable? This is a new file!
+		this.id = new grid.mongo.ObjectID();
+		this.name = this.name || &#x27;&#x27;;  // A new file needs a name
+	}
+
+	this.mode = &#x27;w&#x27;; //Mongodb v2 driver have disabled w+ because of possible data corruption. So only allow `w` for now.
+
+	// The value of this.name may be undefined. GridStore treats that as a missing param
+	// in the call signature, which is what we want.
+	this._store = new grid.mongo.GridStore(grid.db, this.id, this.name, this.mode, this.options);
+
+	this._delayedWrite = null;
+	this._delayedFlush = null;
+	this._delayedClose = null;
+
+	var self = this;
+
+	self._open();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gridfs-stream.writestream.super_" id="apidoc.element.gridfs-stream.writestream.super_">
+        function <span class="apidocSignatureSpan">gridfs-stream.writestream.</span>super_
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function FlushWritable(opts) {
+	Writable.call(this, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gridfs-stream.writestream.prototype" id="apidoc.module.gridfs-stream.writestream.prototype">module gridfs-stream.writestream.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gridfs-stream.writestream.prototype._close" id="apidoc.element.gridfs-stream.writestream.prototype._close">
+        function <span class="apidocSignatureSpan">gridfs-stream.writestream.prototype.</span>_close
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _close(cb) {
+	if (this._opening) {
+		// if we are still opening the store, then delay the close until it is open.
+		this._delayedClose = { cb: cb };
+		return;
+	}
+
+	// otherwise, do the close now
+	this._closeInternal(cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+
+  var self = this;
+
+  //Close the store once `end` received
+  this.on(&#x27;end&#x27;, function() {
+    self._end = true;
+    self.<span class="apidocCodeKeywordSpan">_close</span>()
+  });
+
+  process.nextTick(function() {
+    self._open();
+  });
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gridfs-stream.writestream.prototype._closeInternal" id="apidoc.element.gridfs-stream.writestream.prototype._closeInternal">
+        function <span class="apidocSignatureSpan">gridfs-stream.writestream.prototype.</span>_closeInternal
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_closeInternal = function (cb) {
+	if (!this._opened) return;
+	if (this._closing) return;
+	this._closing = true;
+
+	var self = this;
+	this._store.close(function (err, file) {
+		self._closing = false;
+		self._opened = false;
+		if (err) return self._error(err);
+		self.emit(&#x27;close&#x27;, file);
+
+		if (cb) cb();
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		self._opened = true;
+		self.emit(&#x27;open&#x27;);
+
+		// If _close was called during _store opening, then it was delayed until now, so do the close now
+		if (self._delayedClose) {
+			var closed = self._delayedClose.cb;
+			self._delayedClose = null;
+			return self.<span class="apidocCodeKeywordSpan">_closeInternal</span>(closed);
+		}
+
+		// If _flush was called during _store opening, then it was delayed until now, so do the flush now (it&#x27;s necessarily an empty
+ GridFS file, no _write could have been called and have finished)
+		if (self._delayedFlush) {
+			var flushed = self._delayedFlush;
+			self._delayedFlush = null;
+			return self._flushInternal(flushed);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gridfs-stream.writestream.prototype._error" id="apidoc.element.gridfs-stream.writestream.prototype._error">
+        function <span class="apidocSignatureSpan">gridfs-stream.writestream.prototype.</span>_error
+        <span class="apidocSignatureSpan">(err)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _error(err) {
+	// Stop receiving more data to write, emit `error` and close the store
+	if (this._errorEmitted) return;
+	this._errorEmitted = true;
+
+	this._writable = false;
+	this.emit(&#x27;error&#x27;, err);
+	this._close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (this._opening) return;
+  this._opening = true;
+
+  var self = this;
+
+  // Open the sore
+  this._store.open(function (err, gs) {
+    if (err) return self.<span class="apidocCodeKeywordSpan">_error</span>(err);
+
+    // Find the length of the file by setting the head to the end of the file and requesting the position
+    self._store.seek(0, self._grid.mongo.GridStore.IO_SEEK_END, function(err) {
+if (err) return self._error(err);
+
+// Request the position of the end of the file
+self._store.tell(function(err, position) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gridfs-stream.writestream.prototype._flush" id="apidoc.element.gridfs-stream.writestream.prototype._flush">
+        function <span class="apidocSignatureSpan">gridfs-stream.writestream.prototype.</span>_flush
+        <span class="apidocSignatureSpan">(flushed)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_flush = function (flushed) {
+	// _flush is called when all _write() have finished (even if no _write() was called (empty GridFS file))
+
+	if (this._opening) {
+		// if we are still opening the store, then delay the flush until it is open.
+		this._delayedFlush = flushed;
+		return;
+	}
+
+	// otherwise, do the flush now
+	this._flushInternal(flushed);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gridfs-stream.writestream.prototype._flushInternal" id="apidoc.element.gridfs-stream.writestream.prototype._flushInternal">
+        function <span class="apidocSignatureSpan">gridfs-stream.writestream.prototype.</span>_flushInternal
+        <span class="apidocSignatureSpan">(flushed)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_flushInternal = function (flushed) {
+	this._close(flushed);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			return self._closeInternal(closed);
+		}
+
+		// If _flush was called during _store opening, then it was delayed until now, so do the flush now (it&#x27;s necessarily an empty
+ GridFS file, no _write could have been called and have finished)
+		if (self._delayedFlush) {
+			var flushed = self._delayedFlush;
+			self._delayedFlush = null;
+			return self.<span class="apidocCodeKeywordSpan">_flushInternal</span>(flushed);
+		}
+
+		// If _write was called during _store opening, then it was delayed until now, so do the write now (_flush could not have been
+called yet as _write has not finished yet)
+		if (self._delayedWrite) {
+			var delayedWrite = self._delayedWrite;
+			self._delayedWrite = null;
+			return self._writeInternal(delayedWrite.chunk, delayedWrite.encoding, delayedWrite.done);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gridfs-stream.writestream.prototype._open" id="apidoc.element.gridfs-stream.writestream.prototype._open">
+        function <span class="apidocSignatureSpan">gridfs-stream.writestream.prototype.</span>_open
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_open = function () {
+	if (this._opened) return;
+	if (this._opening) return;
+	this._opening = true;
+
+	var self = this;
+	this._store.open(function (err, gs) {
+		self._opening = false;
+		if (err) return self._error(err);
+		self._opened = true;
+		self.emit(&#x27;open&#x27;);
+
+		// If _close was called during _store opening, then it was delayed until now, so do the close now
+		if (self._delayedClose) {
+			var closed = self._delayedClose.cb;
+			self._delayedClose = null;
+			return self._closeInternal(closed);
+		}
+
+		// If _flush was called during _store opening, then it was delayed until now, so do the flush now (it&#x27;s necessarily an empty GridFS
+ file, no _write could have been called and have finished)
+		if (self._delayedFlush) {
+			var flushed = self._delayedFlush;
+			self._delayedFlush = null;
+			return self._flushInternal(flushed);
+		}
+
+		// If _write was called during _store opening, then it was delayed until now, so do the write now (_flush could not have been
+called yet as _write has not finished yet)
+		if (self._delayedWrite) {
+			var delayedWrite = self._delayedWrite;
+			self._delayedWrite = null;
+			return self._writeInternal(delayedWrite.chunk, delayedWrite.encoding, delayedWrite.done);
+		}
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ //Close the store once `end` received
+ this.on(&#x27;end&#x27;, function() {
+   self._end = true;
+   self._close()
+ });
+
+ process.nextTick(function() {
+   self.<span class="apidocCodeKeywordSpan">_open</span>();
+ });
+}
+
+/**
+* Inherit from stream.Readable
+* @ignore
+*/
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gridfs-stream.writestream.prototype._write" id="apidoc.element.gridfs-stream.writestream.prototype._write">
+        function <span class="apidocSignatureSpan">gridfs-stream.writestream.prototype.</span>_write
+        <span class="apidocSignatureSpan">(chunk, encoding, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_write = function (chunk, encoding, done) {
+	if (this._opening) {
+		// if we are still opening the store, then delay the write until it is open.
+		this._delayedWrite = {chunk: chunk, encoding: encoding, done: done};
+		return;
+	}
+
+	// otherwise, do the write now
+	this._writeInternal(chunk, encoding, done);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gridfs-stream.writestream.prototype._writeInternal" id="apidoc.element.gridfs-stream.writestream.prototype._writeInternal">
+        function <span class="apidocSignatureSpan">gridfs-stream.writestream.prototype.</span>_writeInternal
+        <span class="apidocSignatureSpan">(chunk, encoding, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_writeInternal = function (chunk, encoding, done) {
+	// If destroy or error no more data will be written.
+	if (!this._writable) return;
+
+	var self = this;
+	// Write the chunk to the GridStore. The write head automatically moves along with each write.
+	this._store.write(chunk, function (err, store) {
+		if (err) return self._error(err);
+
+		// Emit the write head position
+		self.emit(&#x27;progress&#x27;, store.position);
+
+		// We are ready to receive a new chunk from the writestream - call done().
+		done();
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			return self._flushInternal(flushed);
+		}
+
+		// If _write was called during _store opening, then it was delayed until now, so do the write now (_flush could not have been
+called yet as _write has not finished yet)
+		if (self._delayedWrite) {
+			var delayedWrite = self._delayedWrite;
+			self._delayedWrite = null;
+			return self.<span class="apidocCodeKeywordSpan">_writeInternal</span>(delayedWrite.chunk, delayedWrite.encoding, delayedWrite
+.done);
+		}
+	});
+}
+
+/**
+* _writeInternal
+*
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gridfs-stream.writestream.prototype.destroy" id="apidoc.element.gridfs-stream.writestream.prototype.destroy">
+        function <span class="apidocSignatureSpan">gridfs-stream.writestream.prototype.</span>destroy
+        <span class="apidocSignatureSpan">(err)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function destroy(err) {
+	// Abort the write stream, even if write not completed
+	if (this._destroyed) return;
+	this._destroyed = true;
+
+	var self = this;
+	process.nextTick(function() {
+		self._error(err);
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * destroySoon
+ *
+ * @api public
+ * @deprecated just use destroy()
+ */
+
+GridWriteStream.prototype.destroySoon = function destroySoon () {
+	return this.<span class="apidocCodeKeywordSpan">destroy</span>();
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gridfs-stream.writestream.prototype.destroySoon" id="apidoc.element.gridfs-stream.writestream.prototype.destroySoon">
+        function <span class="apidocSignatureSpan">gridfs-stream.writestream.prototype.</span>destroySoon
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function destroySoon() {
+	return this.destroy();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
